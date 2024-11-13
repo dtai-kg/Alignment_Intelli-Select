@@ -1,0 +1,571 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#"
+     xml:base="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agency">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Agency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agencyrating"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issueragencyrating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agencyrating -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agencyrating">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businesscenter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businesscenter">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessCenter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessDayAdjustment"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businessdayadjustment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businessdayadjustment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businessdayadjustment">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessDayAdjustment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_economicterms"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_convention -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_convention">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessDayAdjustment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Convention"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businessdayadjustment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debtclass -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debtclass">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtType"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debttype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debteconomics -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debteconomics">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtType"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debttype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debtprincipal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debtprincipal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debteconomics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debttype -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debttype">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Debt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_economicterms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_economicterms">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_fromissuance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_fromissuance">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#FromIssuance"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issuer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issuer">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issueragencyrating -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issueragencyrating">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issuertype -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issuertype">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_listing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_listing">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_original -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_original">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Original"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_remaining -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_remaining">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Remaining"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_securitytype -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_securitytype">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniority -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniority">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debteconomics"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniortytype -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniortytype">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Senior"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Severed"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Subordinated"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniority"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_type">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Certificate"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Debt"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Equity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Fund"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#LetterOfCredit"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Warrant"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_securitytype"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#country">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#currency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#currency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#debtinterest -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#debtinterest">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#debtprincipal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#debtprincipal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#effectivedate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#effectivedate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#equitytype -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#equitytype">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Equity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#exchange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#exchange">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#fyndtype -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#fyndtype">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Fund"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#index -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#index">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#payout -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#payout">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#rating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#rating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#sector -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#sector">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#terminationdate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#terminationdate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#tprovision -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#tprovision">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Agency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Agency"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessCenter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessDayAdjustment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessDayAdjustment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Certificate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Certificate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Convention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Convention"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Debt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Debt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtClass"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Equity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Equity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#FromIssuance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#FromIssuance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Fund -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Fund">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#LetterOfCredit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#LetterOfCredit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Original -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Original"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Remaining -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Remaining"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Senior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Senior">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Severed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Severed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Subordinated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Subordinated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Type"/>
+    
+
+
+    <!-- http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Warrant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Warrant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType"/>
+    </owl:Class>
+    

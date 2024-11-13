@@ -1,0 +1,116 @@
+vocabulary {
+    type country := {no_country, at,au,xe,xb,be,fr,gb,lu,se,nl,de,pl,sk,ky,sg,ca,vg,cl,ae,us,bm,hk,cn,kr,my,kw,ee,ch,dk,xi,xg,jp,nz,no,fi,it,es,si,ie,je,lt,qa,cz,gg,sa,br,co,th,hu,id,pe,mx,ph,ing,uy,za,tr,eg,kz,om,bh,ro,pt,mh,gr,is,cy,pa,rs,sv,cr,gt,iq,sc,hr,ke,sn,ga,ua,bg,tn,ec,gh,ci,uz,ma,pk,bj,rw,ao,ar,mu,cw,li,bs,ng,jm,py,do,mn,az,na,cm,jo,mo,im,tg,bb,cg,tj,me,ge,lv,tt,ad}
+    type rating := {no_rating, a,a_min,a_plus,aa,aa_min,aa_plus,aaa,b,b_min,b_plus,bb_plus,bb_min,bbb,bbb_min,bbb_plus,c,cc,ccc,d,nr}
+    type currency := {no_currency, brl,cny,cop,chf,czk,dem,dkk,huf,idr,inr,mxn,nlg,nok,nzd,pen,pln,sek,sgd,try,zar,aud,cad,eur,gbp,jpy,usd}
+    type Sector_t := {no_sector, state,insurance,multilateral_dev_banks,telecommunications,construction_engineering,chemicals,industrial,consumer_goods_services,pharmaceuticals,real_estate,utilities,food_and_beverage,banking,technology,energy,financial_services,supranational,municipal,unknown,automotive,province,commodities_raw_materials,healthcare,environmental,commercial_services,central_bank}
+    type FundType_t := {no_fundtype, balanced_funds,bond_funds,commodities,credits,other_funds}
+    type EquityType_t := {no_equitytype,convertible_bonds,depository_receipts,ordinary_shares,preferred_convertible_shares,preferred_shares,rights,units,warrants}
+    type DebtClass_t := {no_debtclass, dclass1, dclass2, dclass3}
+    type DebtPrincipal_t := {no_debtprincipal, dprincipal1, dprincipal2, dprincipal3}
+    type TerminationProvision_t := {no_terminationprovision, provions1, provision2, provision3}
+    type Index_t := {no_index, bel20, aex, sp500, dowjones, dax}
+    type Exchange_t := {no_exchange, nasdaq, euronext}
+    
+    CountryOfOrigin: () -> country
+    Issuer_CountryOfOrigin: () -> country
+    Exchange: () -> Exchange_t
+    Index: () -> Index_t
+    Sector: () -> Sector_t
+    DenominationCurrency : () -> currency
+    CreditNotation : () -> rating
+    Issuer_CreditNotation : () -> rating
+    EffectiveDate :() -> Date
+    TerminationDate: () -> Date
+    Payout : () -> Real
+    TerminationProvision : () -> TerminationProvision_t
+    EquityType : () -> EquityType_t
+    FundType : () -> FundType_t
+    DebtInterest : () -> Real
+    DebtPrincipal : () -> DebtPrincipal_t
+    DebtClass : () -> DebtClass_t
+    Security, Issuer_AgencyRating, AgencyRating, Issuer,Issuer_Type, Issuer_Agency,Listing, Maturity, Agency, Orginal, Remaining, FromIssuance, SecurityType, Debt, Equity, Fund, Warrant, LetterOfCredit, DebtType, DebtEconomics, Seniority, Senior, Subordinated, Severed,EconomicTerms, BusinessDayAdjustment, Convention, BusinessCenter, Cash: () -> Bool
+    
+    nan:() -> Real
+    nad:() -> Date
+    }
+
+theory {
+    Security() <=> DenominationCurrency() ~= no_currency.
+	Security() <= Listing().
+	Security() <=> Maturity().
+	Security() <= AgencyRating().
+	Security() <=> Issuer().
+	Security() <=> CountryOfOrigin() ~= no_country.
+	Security() <=> SecurityType().
+	Security() <= EconomicTerms().
+	AgencyRating() <=> Agency().
+	AgencyRating() <=> CreditNotation() ~= no_rating.
+	Issuer() <= Issuer_AgencyRating().
+	Issuer() <= Issuer_CountryOfOrigin() ~= no_country.
+	Issuer() <=> Issuer_Type().
+    Issuer_AgencyRating() <=> Issuer_Agency().
+	Issuer_AgencyRating() <=> Issuer_CreditNotation() ~= no_rating.
+	Listing() <=> Exchange() ~= no_exchange.
+	Listing() <=> Index() ~= no_index.
+	Listing() <=> Sector() ~= no_sector.
+    Maturity() <=> FromIssuance().
+	Maturity() <=> Remaining().
+	Maturity() <=> Orginal().
+	SecurityType() <= Debt().
+	SecurityType() <= Equity().
+	SecurityType() <= Fund().
+	SecurityType() <= Warrant().
+	SecurityType() <= LetterOfCredit().
+	SecurityType() <= Cash().
+	SecurityType() => (Debt() <=> ~(Equity() | Fund() | Warrant() | LetterOfCredit() | Cash())).
+	SecurityType() => (Equity() <=> ~(Debt() | Fund() | Warrant() | LetterOfCredit() | Cash())).
+	SecurityType() => (Fund() <=> ~(Debt() | Equity() | Warrant() | LetterOfCredit() | Cash())).
+	SecurityType() => (Warrant() <=> ~(Debt() | Equity() | Fund() | LetterOfCredit() | Cash())).
+	SecurityType() => (LetterOfCredit() <=> ~(Debt() | Equity() | Fund() | Warrant() | Cash())).
+	SecurityType() => (Cash() <=> ~(Debt() | Equity() | Fund() | Warrant() | LetterOfCredit())).
+    Debt() <=> DebtType().
+	Equity() <=> EquityType() ~= no_equitytype.
+	Fund() <=> FundType() ~= no_fundtype.
+	DebtType() <=> DebtClass() ~= no_debtclass.
+	DebtType() <= DebtEconomics().
+	DebtEconomics() <= Seniority().
+    DebtEconomics() <= DebtPrincipal() ~= no_debtprincipal.
+    DebtEconomics() <=> DebtInterest() ~= nan().
+	Seniority() <= Senior().
+	Seniority() <= Subordinated().
+	Seniority() <= Severed().
+	Seniority() => (Senior() <=> ~(Subordinated() | Severed())).
+	Seniority() => (Subordinated() <=> ~(Senior() | Severed())).
+	Seniority() => (Severed() <=> ~(Senior() | Subordinated())).
+	EconomicTerms() <=> BusinessDayAdjustment().
+	EconomicTerms() <=> TerminationProvision() ~= no_terminationprovision.
+	BusinessDayAdjustment() <=> BusinessCenter().
+	BusinessDayAdjustment() <=> Convention().
+    Security().
+}
+
+structure{
+    nan := -1000.
+    nad := #1970-01-01.
+}
+display {
+    view() = expanded.
+    unit('$',`Payout).
+    unit('%',`DebtInterest).
+    heading('Representation of',`Security).
+	heading('Security children',`DenominationCurrency,`Listing,`Maturity,`AgencyRating,`Issuer,`CountryOfOrigin,`SecurityType,`EconomicTerms).
+	heading('Maturity children',`FromIssuance,`Remaining,`Orginal).
+    heading('Listing children',`Exchange,`Index,`Sector).
+    heading('AgencyRating children',`Agency,`CreditNotation).
+	heading('SecurityType children',`Debt,`Equity,`Fund,`Warrant,`LetterOfCredit,`Cash).
+    heading('Issuer children',`Issuer_AgencyRating,`Issuer_Type,`Issuer_CountryOfOrigin).
+    heading('Issuer AgencyRating children',`Issuer_Agency,`Issuer_CreditNotation).
+	heading('Debt children',`DebtType).
+	heading('Equity children',`EquityType).
+	heading('Fund children',`FundType).
+	heading('DebtType children',`DebtClass,`DebtEconomics).
+	heading('DebtEconomics children',`Seniority,`DebtInterest,`DebtPrincipal).
+	heading('Seniority children',`Senior,`Subordinated,`Severed).
+	heading('EconomicTerms children',`EffectiveDate,`TerminationDate,`Payout,`BusinessDayAdjustment,`TerminationProvision).
+	heading('BusinessDayAdjustment children',`BusinessCenter,`Convention).
+}

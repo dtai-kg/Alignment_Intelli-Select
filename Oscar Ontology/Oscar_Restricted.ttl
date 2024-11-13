@@ -1,0 +1,532 @@
+@prefix : <http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-49/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-49/> .
+
+<http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-49> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund> ;
+                      rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Open_End> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_bond_risk_profile
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_bond_risk_profile> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                    rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                                    rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_flags
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_flags> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                        rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                        rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_inflation_linked_notes
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_inflation_linked_notes> rdf:type owl:ObjectProperty ;
+                                                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                         rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                                         rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Inflation_Linked_Notes> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_nav
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_nav> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_securitytype
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_securitytype> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                               rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                               rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_subordinated_debt
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_subordinated_debt> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                    rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                                    rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Subordinated_Debt> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_type> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_securitytype> ;
+                                                                       rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type> ;
+                                                                       rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ,
+                                                                                  <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity> ,
+                                                                                  <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_ucits
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_ucits> rdf:type owl:ObjectProperty ;
+                                                                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#is_open_ended
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#is_open_ended> rdf:type owl:ObjectProperty ;
+                                                                            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#is_state_guaranteed
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#is_state_guaranteed> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                  rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                                  rdfs:range <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#State_Guaranteed> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Applied_Rating
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Applied_Rating> rdf:type owl:DatatypeProperty ;
+                                                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                                                             rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                             rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Country_of_Risk
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Country_of_Risk> rdf:type owl:DatatypeProperty ;
+                                                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                                                              rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                              rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Currency
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Currency> rdf:type owl:DatatypeProperty ;
+                                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                                       rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                       rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Esg_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Esg_type> rdf:type owl:DatatypeProperty ;
+                                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                                       rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                       rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Industry_Sector
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Industry_Sector> rdf:type owl:DatatypeProperty ;
+                                                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                                                              rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                              rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Issuer_Country
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Issuer_Country> rdf:type owl:DatatypeProperty ;
+                                                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                                                             rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                             rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Market_Capitalization
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Market_Capitalization> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                    rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                                    rdfs:range xsd:int .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Price_Age
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Price_Age> rdf:type owl:DatatypeProperty ;
+                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                        rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                        rdfs:range xsd:int .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#SEG_Index
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#SEG_Index> rdf:type owl:DatatypeProperty ;
+                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                        rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> ;
+                                                                        rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#bond_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#bond_type> rdf:type owl:DatatypeProperty ;
+                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                        rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                        rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#coupon_class_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#coupon_class_type> rdf:type owl:DatatypeProperty ;
+                                                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                                rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#equity_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#equity_type> rdf:type owl:DatatypeProperty ;
+                                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                                          rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity> ;
+                                                                          rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#fund_subtype
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#fund_subtype> rdf:type owl:DatatypeProperty ;
+                                                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                                                           rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund> ;
+                                                                           rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#fund_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#fund_type> rdf:type owl:DatatypeProperty ;
+                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                        rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund> ;
+                                                                        rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_age
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_age> rdf:type owl:DatatypeProperty ;
+                                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                                      rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV> ;
+                                                                      rdfs:range xsd:int .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_frequency
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_frequency> rdf:type owl:DatatypeProperty ;
+                                                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                                                            rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV> ;
+                                                                            rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_volatility_sixty_days
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_volatility_sixty_days> rdf:type owl:DatatypeProperty ;
+                                                                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                        rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV> ;
+                                                                                        rdfs:range owl:real .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_volatility_thirty_days
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_volatility_thirty_days> rdf:type owl:DatatypeProperty ;
+                                                                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                         rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV> ;
+                                                                                         rdfs:range owl:real .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#outstanding_amount
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#outstanding_amount> rdf:type owl:DatatypeProperty ;
+                                                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                 rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                                 rdfs:range xsd:int .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#outstanding_issue_size
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#outstanding_issue_size> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                     rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity> ;
+                                                                                     rdfs:range xsd:int .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#structured_bond_subtype
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#structured_bond_subtype> rdf:type owl:DatatypeProperty ;
+                                                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                      rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Structured> ;
+                                                                                      rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#structured_bond_type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#structured_bond_type> rdf:type owl:DatatypeProperty ;
+                                                                                   rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                   rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Structured> ;
+                                                                                   rdfs:range rdfs:Literal .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#time_to_maturity
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#time_to_maturity> rdf:type owl:DatatypeProperty ;
+                                                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                                                               rdfs:domain <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> ;
+                                                                               rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Agency
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Agency> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_bond_risk_profile> ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_flags> ;
+                                                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_inflation_linked_notes> ;
+                                                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Inflation_Linked_Notes>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_subordinated_debt> ;
+                                                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Subordinated_Debt>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#is_state_guaranteed> ;
+                                                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#State_Guaranteed>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#bond_type> ;
+                                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#outstanding_amount> ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:int
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#time_to_maturity> ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onDataRange xsd:int
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#coupon_class_type> ;
+                                                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                   ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> rdf:type owl:Class .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Convertible
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Convertible> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Corporate
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Corporate> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type> ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#equity_type> ;
+                                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                     ] ,
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#outstanding_issue_size> ;
+                                                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                       owl:onDataRange xsd:int
+                                                                                     ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Esg_flag
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Esg_flag> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags> rdf:type owl:Class .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type> ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_nav> ;
+                                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_ucits> ;
+                                                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#UCITS>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#is_open_ended> ;
+                                                                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                     owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Open_End>
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#fund_type> ;
+                                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                   ] ,
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#fund_subtype> ;
+                                                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                   ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Green_Flag
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Green_Flag> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Inflation_Linked_Notes
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Inflation_Linked_Notes> rdf:type owl:Class .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#NAV> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_age> ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange xsd:int
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_frequency> ;
+                                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_volatility_sixty_days> ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange owl:real
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#nav_volatility_thirty_days> ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onDataRange owl:real
+                                                                                  ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Open_End
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Open_End> rdf:type owl:Class .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Own_Use_Covered_Bond_Flag
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Own_Use_Covered_Bond_Flag> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_securitytype> ;
+                                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Applied_Rating> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Country_of_Risk> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Currency> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Industry_Sector> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Issuer_Country> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#SEG_Index> ;
+                                                                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Market_Capitalization> ;
+                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Price_Age> ;
+                                                                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                         owl:onDataRange xsd:integer
+                                                                                       ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Security_Type> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_type> ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond>
+                                                                                            ] ,
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_type> ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity>
+                                                                                            ] ,
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#has_type> ;
+                                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                              owl:onClass <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund>
+                                                                                            ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Sharia_Flag
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Sharia_Flag> rdf:type owl:Class ;
+                                                                          rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Flags> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Sovereign
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Sovereign> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#State_Guaranteed
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#State_Guaranteed> rdf:type owl:Class .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Structured
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Structured> rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond_Risk_Profiles> ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#structured_bond_subtype> ;
+                                                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                         ] ,
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#structured_bond_type> ;
+                                                                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                                         ] .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Subordinated_Debt
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Subordinated_Debt> rdf:type owl:Class .
+
+
+###  https://data.nasa.gov/ontologies/atmonto/equipment/airplane#UCITS
+<https://data.nasa.gov/ontologies/atmonto/equipment/airplane#UCITS> rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Agency>
+                <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Convertible>
+                <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Corporate>
+                <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Sovereign>
+                <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Structured>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Bond>
+                <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Equity>
+                <https://data.nasa.gov/ontologies/atmonto/equipment/airplane#Fund>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

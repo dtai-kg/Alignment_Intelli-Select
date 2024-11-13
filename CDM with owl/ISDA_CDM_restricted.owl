@@ -1,0 +1,592 @@
+@prefix : <http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#> .
+
+<http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agency
+:has_agency rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :has_agencyrating ,
+                               :has_issueragencyrating ;
+            rdfs:domain :AgencyRating ;
+            rdfs:range :Agency .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_agencyrating
+:has_agencyrating rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Security ;
+                  rdfs:range :AgencyRating .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businesscenter
+:has_businesscenter rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :has_businessdayadjustment ;
+                    rdfs:domain :BusinessDayAdjustment ;
+                    rdfs:range :BusinessCenter .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_businessdayadjustment
+:has_businessdayadjustment rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :has_economicterms ;
+                           rdfs:domain :EconomicTerms ;
+                           rdfs:range :BusinessDayAdjustment .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_convention
+:has_convention rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :has_businessdayadjustment ;
+                rdfs:domain :BusinessDayAdjustment ;
+                rdfs:range :Convention .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debtclass
+:has_debtclass rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :has_debttype ;
+               rdfs:domain :DebtType ;
+               rdfs:range :DebtClass .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debteconomics
+:has_debteconomics rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :has_debttype ;
+                   rdfs:domain :DebtType ;
+                   rdfs:range :DebtEconomics .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debtprincipal
+:has_debtprincipal rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :has_debteconomics ;
+                   rdfs:domain :DebtEconomics ;
+                   rdfs:range [ rdf:type owl:Restriction ;
+                                owl:onProperty :debtprincipal ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_debttype
+:has_debttype rdf:type owl:ObjectProperty ;
+              rdfs:domain :Debt ;
+              rdfs:range :DebtType .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_economicterms
+:has_economicterms rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Security ;
+                   rdfs:range :EconomicTerms .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_fromissuance
+:has_fromissuance rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :has_maturity ;
+                  rdfs:domain :Maturity ;
+                  rdfs:range :FromIssuance .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issuer
+:has_issuer rdf:type owl:ObjectProperty ;
+            rdfs:domain :Security ;
+            rdfs:range :Issuer .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issueragencyrating
+:has_issueragencyrating rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Issuer ;
+                        rdfs:range :AgencyRating .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_issuertype
+:has_issuertype rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Issuer ;
+                rdfs:range :Type .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_listing
+:has_listing rdf:type owl:ObjectProperty ;
+             rdfs:domain :Security ;
+             rdfs:range :Listing .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity
+:has_maturity rdf:type owl:ObjectProperty ;
+              rdfs:domain :Security ;
+              rdfs:range :Maturity .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_original
+:has_original rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_maturity ;
+              rdfs:domain :Maturity ;
+              rdfs:range :Original .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_remaining
+:has_remaining rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :has_maturity ;
+               rdfs:domain :Maturity ;
+               rdfs:range :Remaining .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_securitytype
+:has_securitytype rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Security ;
+                  rdfs:range :SecurityType .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniority
+:has_seniority rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :has_debteconomics ;
+               rdfs:domain :DebtEconomics ;
+               rdfs:range :Seniority .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_seniortytype
+:has_seniortytype rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :has_seniority ;
+                  rdfs:domain :Seniority ;
+                  rdfs:range :Senior ,
+                             :Severed ,
+                             :Subordinated .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_type
+:has_type rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :has_securitytype ;
+          rdfs:domain :SecurityType ;
+          rdfs:range :Certificate ,
+                     :Debt ,
+                     :Equity ,
+                     :Fund ,
+                     :LetterOfCredit ,
+                     :Warrant .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#country
+:country rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Issuer ,
+                     :Security ;
+         rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#currency
+:currency rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Security ;
+          rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#debtinterest
+:debtinterest rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DebtEconomics ;
+              rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#debtprincipal
+:debtprincipal rdf:type owl:DatatypeProperty ;
+               rdfs:domain :DebtEconomics ;
+               rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#effectivedate
+:effectivedate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :EconomicTerms ;
+               rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#equitytype
+:equitytype rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Equity ;
+            rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#exchange
+:exchange rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Listing ;
+          rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#fyndtype
+:fyndtype rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Fund ;
+          rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#index
+:index rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Listing ;
+       rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#payout
+:payout rdf:type owl:DatatypeProperty ;
+        rdfs:domain :EconomicTerms ;
+        rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :AgencyRating ;
+        rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#sector
+:sector rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Listing ;
+        rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#terminationdate
+:terminationdate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :EconomicTerms ;
+                 rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#tprovision
+:tprovision rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EconomicTerms ;
+            rdfs:range rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Agency
+:Agency rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating
+:AgencyRating rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_agency ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Agency
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :rating ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessCenter
+:BusinessCenter rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#BusinessDayAdjustment
+:BusinessDayAdjustment rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty :has_businesscenter ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :BusinessCenter
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :has_convention ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :Convention
+                                       ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Certificate
+:Certificate rdf:type owl:Class ;
+             rdfs:subClassOf :SecurityType .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Convention
+:Convention rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Debt
+:Debt rdf:type owl:Class ;
+      rdfs:subClassOf :SecurityType ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_debttype ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :DebtType
+                      ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtClass
+:DebtClass rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtEconomics
+:DebtEconomics rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :has_seniority ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Seniority
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :debtinterest ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#DebtType
+:DebtType rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_debteconomics ;
+                            owl:someValuesFrom :DebtEconomics
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_debtclass ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :DebtClass
+                          ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#EconomicTerms
+:EconomicTerms rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :has_businessdayadjustment ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :BusinessDayAdjustment
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :effectivedate ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :payout ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :terminationdate ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :tprovision ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Equity
+:Equity rdf:type owl:Class ;
+        rdfs:subClassOf :SecurityType ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :equitytype ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#FromIssuance
+:FromIssuance rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Fund
+:Fund rdf:type owl:Class ;
+      rdfs:subClassOf :SecurityType ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :fyndtype ;
+                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                      ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Issuer
+:Issuer rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_issueragencyrating ;
+                          owl:someValuesFrom :AgencyRating
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_issuertype ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Type
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :country ;
+                          owl:someValuesFrom rdfs:Literal
+                        ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#LetterOfCredit
+:LetterOfCredit rdf:type owl:Class ;
+                rdfs:subClassOf :SecurityType .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Listing
+:Listing rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity
+:Maturity rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_fromissuance ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :FromIssuance
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_original ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Original
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_remaining ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Remaining
+                          ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Original
+:Original rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Remaining
+:Remaining rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security
+:Security rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_agencyrating ;
+                            owl:someValuesFrom :AgencyRating
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_issuer ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Issuer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_maturity ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Maturity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_securitytype ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :SecurityType
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_economicterms ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :EconomicTerms
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_listing ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Listing
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :country ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :currency ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType
+:SecurityType rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Certificate
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Debt
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Equity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Fund
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :LetterOfCredit
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Warrant
+                              ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Senior
+:Senior rdf:type owl:Class ;
+        rdfs:subClassOf :Seniority .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Seniority
+:Seniority rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_seniortytype ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Senior
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_seniortytype ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Severed
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :has_seniortytype ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Subordinated
+                           ] .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Severed
+:Severed rdf:type owl:Class ;
+         rdfs:subClassOf :Seniority .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Subordinated
+:Subordinated rdf:type owl:Class ;
+              rdfs:subClassOf :Seniority .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Type
+:Type rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Warrant
+:Warrant rdf:type owl:Class ;
+         rdfs:subClassOf :SecurityType .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Certificate
+                :Debt
+                :Equity
+                :Fund
+                :LetterOfCredit
+                :Warrant
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Senior
+                :Severed
+                :Subordinated
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

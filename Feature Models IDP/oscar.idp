@@ -1,0 +1,152 @@
+vocabulary {
+	type Bond_types := {Medtermnte, shrttermnte, bill, certofdep, commpaper, strghtbond, billsofxchg, promssrynote, letrofcr}
+	type Fund_types := {BalancedFund,BondFund,HedgeFund,MoneyMarketFund,InvestmentFund,OtherFund,Pension,RealEstateFund}
+	type Equity_types := {ConvertibleShare,DepositoryReceipt,OrdinaryShare,PreferredConvertibleShare,PreferredShare,Right,Units,Warrant}
+	type Structured_bond_subtypes := {SEC_SUB_CAT_TYP_ABBR, ABSA, CLO, CVUK, CLN, CMBS}
+	type Currencies := {euro,pond,dolalr}
+	type Rating := {AAA,AA,A,B,C,D,E}
+	type Industry := {bio,finance,medical,academic}
+	type Structured_bond_types := {Asset_Backed_Securities,CollateralisedDebtObligation, Covered_Bonds, CreditLinkedNotes, Mortgage_Backed_Securities}
+	type Country := {belgium, france, netherlands, usa, uk, japan, china}
+	type Nav_frequencies := {CD_VAL,SHT_NM,DSCP,TWICE_A_WEEK,ANNUALLY,DAILY,FORTNIGHTLY,MONTHLY,QUARTERLY,WEEKLY,TWICE_A_YEAR}
+	type Fund_subtypes := {Balanced_Fund,Bond_Fund,Equity_Funds,Convertible_Sec_Fund,Government_Securities_Fund,Index_Tracker_Fund,Sector_Fund,Hedge_Fund,Cash_Fund,Currency_Fund,Money_Market_Fund,Fund_of_Funds,Pension_Fund,Property_Real_Estate_Fund}
+	type Esg_types := {NONE, BLUE, CBGB, EQUB, FRSB, IMPB, PANM, PPGB, PROJECT, SCLB, SLCB, SLGB, STLB, STNB, TRAN, VACB, WATER, UNKNOWN}
+	type Coupon_class_types := {zero_coupon,stripped_coupon}
+	type Index := {AEX,AS,ASE,ASX,ATXPRIME,BEL}
+	security:() -> Bool 
+	security_type:() -> Bool 
+	bond:() -> Bool 
+	fund:() -> Bool 
+	equity:() -> Bool 
+	bond_risk_profiles:() -> Bool 
+	sovereign:() -> Bool 
+	agency:() -> Bool 
+	structured:() -> Bool 
+	corporate:() -> Bool 
+	convertible:() -> Bool 
+	bond_type:() -> Bond_types 
+	structured_bond_type:() -> Structured_bond_types 
+	equity_type:() -> Equity_types 
+	structured_bond_subtype:() -> Structured_bond_subtypes 
+	fund_type:() -> Fund_types 
+	subordinated_debt:() -> Bool 
+	price_age:() -> Int 
+	nav_age:() -> Int 
+	currency:() -> Currencies 
+	outstanding_amount:() -> Int 
+	outstanding_issue_size:() -> Int 
+	state_guaranteed:() -> Bool 
+	time_to_maturity:() -> Int 
+	applied_rating:() -> Rating 
+	industry_sector:() -> Industry 
+	market_capitalisation:() -> Int 
+	ucits:() -> Bool 
+	open_ended:() -> Bool 
+	issuer_country:() -> Country 
+	nav_volatility_thirty_days:() -> Real 
+	nav:() -> Bool 
+	nav_frequency:() -> Nav_frequencies 
+	nav_volatility_sixty_days:() -> Real 
+	fund_subtype:() -> Fund_subtypes 
+	own_use_covered_bond_flag:() -> Bool 
+	country_of_risk:() -> Country 
+	flags:() -> Bool 
+	sharia_flag:() -> Bool 
+	green_flag:() -> Bool 
+	esg_flag:() -> Bool 
+	esg_type:() -> Esg_types 
+	coupon_class_type:() -> Coupon_class_types 
+	inflation_linked_notes:() -> Bool 
+	seg_index:() -> Index 
+	type Feature := {Security, Security_type, Bond, Fund, Equity, Bond_risk_profiles, Sovereign, Agency, Structured, Corporate, Convertible, Bond_type, Structured_bond_type, Equity_type, Structured_bond_subtype, Fund_type, Subordinated_debt, Price_age, Nav_age, Currency, Outstanding_amount, Outstanding_issue_size, State_guaranteed, Time_to_maturity, Applied_rating, Industry_sector, Market_capitalisation, Ucits, Open_ended, Issuer_country, Nav_volatility_thirty_days, Nav, Nav_frequency, Nav_volatility_sixty_days, Fund_subtype, Own_use_covered_bond_flag, Country_of_risk, Flags, Sharia_flag, Green_flag, Esg_flag, Esg_type, Coupon_class_type, Inflation_linked_notes, Seg_index}
+	present: Feature -> Bool
+}
+theory {
+	security() <=> present(Security).
+	present(Security) <=> present(Security_type).
+	present(Security) <= present(Price_age).
+	present(Security) <=> present(Currency).
+	present(Security) <=> present(Applied_rating).
+	present(Security) <=> present(Industry_sector).
+	present(Security) <= present(Market_capitalisation).
+	present(Security) <=> present(Issuer_country).
+	present(Security) <=> present(Country_of_risk).
+	present(Security) <=> present(Seg_index).
+	security_type() <=> present(Security_type).
+	present(Security_type) <= present(Bond).
+	present(Security_type) <= present(Equity).
+	present(Security_type) <= present(Fund).
+	present(Security_type) => (present(Bond) <=> ~(present(Equity) | present(Fund))).
+	present(Security_type) => (present(Equity) <=> ~(present(Bond) | present(Fund))).
+	present(Security_type) => (present(Fund) <=> ~(present(Bond) | present(Equity))).
+	bond() <=> present(Bond).
+	present(Bond) <=> present(Bond_risk_profiles).
+	present(Bond) <=> present(Bond_type).
+	present(Bond) <= present(Subordinated_debt).
+	present(Bond) <=> present(Outstanding_amount).
+	present(Bond) <= present(State_guaranteed).
+	present(Bond) <=> present(Time_to_maturity).
+	present(Bond) <= present(Flags).
+	present(Bond) <= present(Esg_type).
+	present(Bond) <= present(Coupon_class_type).
+	present(Bond) <= present(Inflation_linked_notes).
+	fund() <=> present(Fund).
+	present(Fund) <=> present(Fund_type).
+	present(Fund) <= present(Ucits).
+	present(Fund) <= present(Open_ended).
+	present(Fund) <=> present(Nav).
+	present(Fund) <= present(Fund_subtype).
+	equity() <=> present(Equity).
+	present(Equity) <=> present(Equity_type).
+	present(Equity) <=> present(Outstanding_issue_size).
+	bond_risk_profiles() <=> present(Bond_risk_profiles).
+	present(Bond_risk_profiles) <= present(Sovereign).
+	present(Bond_risk_profiles) <= present(Convertible).
+	present(Bond_risk_profiles) <= present(Agency).
+	present(Bond_risk_profiles) <= present(Structured).
+	present(Bond_risk_profiles) <= present(Corporate).
+	present(Bond_risk_profiles) => (present(Sovereign) <=> ~(present(Convertible) | present(Agency) | present(Structured) | present(Corporate))).
+	present(Bond_risk_profiles) => (present(Convertible) <=> ~(present(Sovereign) | present(Agency) | present(Structured) | present(Corporate))).
+	present(Bond_risk_profiles) => (present(Agency) <=> ~(present(Sovereign) | present(Convertible) | present(Structured) | present(Corporate))).
+	present(Bond_risk_profiles) => (present(Structured) <=> ~(present(Sovereign) | present(Convertible) | present(Agency) | present(Corporate))).
+	present(Bond_risk_profiles) => (present(Corporate) <=> ~(present(Sovereign) | present(Convertible) | present(Agency) | present(Structured))).
+	sovereign() <=> present(Sovereign).
+	agency() <=> present(Agency).
+	structured() <=> present(Structured).
+	present(Structured) <=> present(Structured_bond_type).
+	present(Structured) <=> present(Structured_bond_subtype).
+	corporate() <=> present(Corporate).
+	convertible() <=> present(Convertible).
+	subordinated_debt() <=> present(Subordinated_debt).
+	state_guaranteed() <=> present(State_guaranteed).
+	ucits() <=> present(Ucits).
+	open_ended() <=> present(Open_ended).
+	nav() <=> present(Nav).
+	present(Nav) <=> present(Nav_age).
+	present(Nav) <=> present(Nav_volatility_thirty_days).
+	present(Nav) <=> present(Nav_frequency).
+	present(Nav) <=> present(Nav_volatility_sixty_days).
+	own_use_covered_bond_flag() <=> present(Own_use_covered_bond_flag).
+	flags() <=> present(Flags).
+	present(Flags) <= present(Own_use_covered_bond_flag).
+	present(Flags) <= present(Sharia_flag).
+	present(Flags) <= present(Green_flag).
+	present(Flags) <= present(Esg_flag).
+	sharia_flag() <=> present(Sharia_flag).
+	green_flag() <=> present(Green_flag).
+	esg_flag() <=> present(Esg_flag).
+	inflation_linked_notes() <=> present(Inflation_linked_notes).
+}
+structure{
+}
+display {
+	heading('Security children',`security_type,`price_age,`currency,`applied_rating,`industry_sector,`market_capitalisation,`issuer_country,`country_of_risk,`seg_index).
+	heading('Security_Type children',`bond,`equity,`fund).
+	heading('Bond children',`bond_risk_profiles,`bond_type,`subordinated_debt,`outstanding_amount,`state_guaranteed,`time_to_maturity,`flags,`esg_type,`coupon_class_type,`inflation_linked_notes).
+	heading('Fund children',`fund_type,`ucits,`open_ended,`nav,`fund_subtype).
+	heading('Equity children',`equity_type,`outstanding_issue_size).
+	heading('Bond_Risk_Profiles children',`sovereign,`convertible,`agency,`structured,`corporate).
+	heading('Structured children',`structured_bond_type,`structured_bond_subtype).
+	heading('NAV children',`nav_age,`nav_volatility_thirty_days,`nav_frequency,`nav_volatility_sixty_days).
+	heading('Flags children',`own_use_covered_bond_flag,`sharia_flag,`green_flag,`esg_flag).
+}

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8' standalone='no'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'
+         xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+         xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+         xmlns:alext='http://exmo.inrialpes.fr/align/ext/1.0/'
+         xmlns:align='http://knowledgeweb.semanticweb.org/heterogeneity/alignment#'>
+<Alignment>
+  <xml>yes</xml>
+  <level>0</level>
+  <type>**</type>
+  <alext:method>fr.inrialpes.exmo.align.ling.JWNLAlignment</alext:method>
+  <alext:time>903690</alext:time>
+  <onto1>
+    <Ontology rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57">
+      <location>file:///mnt/c/users/aliha/Downloads/alignapi-version-4.10/alignapi-version-4.10/examples/rdf/oscar.ttl</location>
+      <formalism>
+        <Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#"/>
+      </formalism>
+    </Ontology>
+  </onto1>
+  <onto2>
+    <Ontology rdf:about="http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD">
+      <location>file:///mnt/c/users/aliha/Downloads/alignapi-version-4.10/alignapi-version-4.10/examples/rdf/cdm.ttl</location>
+      <formalism>
+        <Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#"/>
+      </formalism>
+    </Ontology>
+  </onto2>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/seg_index'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#index'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.7142857142857143</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/currency'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#currency'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/has_type'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_type'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/issuer_country'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#country'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.6666666666666666</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/has_security_type'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_securitytype'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.7272727272727273</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/country_of_risk'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#country'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.6363636363636364</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Fund'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Fund'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/esg_type'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_type'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.625</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Bond'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Certificate'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.8148148148148148</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Security'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Maturity'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.625</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Security'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.8</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Security'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Security'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Certificate'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/applied_rating'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#rating'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.6</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/time_to_maturity'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#has_maturity'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.6428571428571429</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Equity'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Equity'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Agency'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#AgencyRating'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.6666666666666666</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Agency'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Agency'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>1.0</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Security_Type'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#SecurityType'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.64</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Security_Type'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Security'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.7619047619047619</measure>
+    </Cell>
+  </map>
+  <map>
+    <Cell>
+      <entity1 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/10/untitled-ontology-57/Subordinated_Debt'/>
+      <entity2 rdf:resource='http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#Subordinated'/>
+      <relation>=</relation>
+      <measure rdf:datatype='http://www.w3.org/2001/XMLSchema#float'>0.8275862068965517</measure>
+    </Cell>
+  </map>
+</Alignment>
+</rdf:RDF>

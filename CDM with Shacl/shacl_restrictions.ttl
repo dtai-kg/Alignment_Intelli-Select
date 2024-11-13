@@ -1,0 +1,317 @@
+@prefix : <http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/aliha/ontologies/2023/5/ISDA_CD> .
+
+
+:AgencyShape  a  sh:NodeShape;
+ sh:targetClass :AgencyRating ;
+ sh:property [
+    sh:path     :has_agency ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:class :Agency;
+] .
+
+
+ :CreditNotationShape  a  sh:NodeShape;
+ sh:targetClass :AgencyRating ;
+ sh:property [
+    sh:path     :rating ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string;
+] .
+
+
+:SecurityShape a sh:NodeShape;
+sh:targetClass :Security ;
+sh:property :HasMaturity;
+sh:property :HasCountry;
+sh:property :HasListing;
+sh:property :HasDemonitionCurrency;
+sh:property :HasIssuer;
+sh:property :HasAgencyrating;
+sh:property :HasEconomicterms;
+sh:property :HasSecurityType.
+
+:HasMaturity sh:path :has_maturity ;
+   sh:minCount 1;
+   sh:maxCount 1;
+   sh:class :Maturity.
+
+
+:HasCountry sh:path :country ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+
+:HasListing sh:path :has_listing ;
+    sh:maxCount 1;
+   sh:class :Listing.
+
+
+:HasDemonitionCurrency sh:path :currency ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+
+:HasAgencyrating sh:path :has_agencyrating ;
+    sh:class :AgencyRating.
+
+
+:HasIssuer sh:path :has_issuer ;
+    sh:minCount 1;
+    sh:maxCount 1;
+   sh:class :Issuer.
+
+
+:HasEconomicterms sh:path :has_economicterms ;
+    sh:maxCount 1;
+sh:class :EconomicTerms.
+
+:HasSecurityType sh:path :has_securitytype ;
+   sh:minCount 1;
+   sh:maxCount 1;
+   sh:class :SecurityType.
+
+
+:MaturityShape a sh:NodeShape;
+sh:targetClass :Maturity ;
+sh:property :HasOriginal;
+sh:property :HasRemaining;
+sh:property :HasFromIssuance.
+
+
+:HasOriginal sh:path :has_original ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :Original.
+
+:HasRemaining sh:path :has_remaining ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :Remaining.
+
+:HasFromIssuance sh:path :has_fromissuance ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :FromIssuance.
+
+:ListingShape a sh:NodeShape;
+sh:targetClass :Listing ;
+sh:property :HasExchange;
+sh:property :HasIndex;
+sh:property :HasSector.
+
+:HasExchange sh:path :exchange ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+:HasIndex sh:path :index ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+:HasSector sh:path :sector ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+
+:IssuerShape a sh:NodeShape;
+sh:targetClass :Listing ;
+sh:property :HasIssuerCountry;
+sh:property :HasIssuerType;
+sh:property :HasIssuerAgencyRating.    
+
+:HasIssuerCountry sh:path :country ;
+    sh:datatype xsd:string.
+
+:HasIssuerType sh:path :has_issuertype ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :Type.
+
+
+:HasIssuerAgencyRating sh:path :has_issueragencyrating ;
+ sh:targetObjectsOf :has_issueragencyrating ;
+sh:class :AgencyRating.
+
+:EconomicTermsShape a sh:NodeShape;
+sh:targetClass :EconomicTerms ;
+sh:property :HasEffectiveDate;
+sh:property :HasTerminationDate;
+sh:property :HasPayout;
+sh:property :HasTerminationProvision;
+sh:property :HasBusinessDayAdjustment.
+
+
+:HasEffectiveDate sh:path :effectivedate ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:date.   
+
+:HasTerminationDate sh:path :terminationdate ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:date.   
+
+:HasPayout sh:path :payout ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+:HasTerminationProvision sh:path :tprovision ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string.
+
+:HasBusinessDayAdjustment sh:path :has_businessdayadjustment ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :BusinessDayAdjustment.
+
+:BusinessDayAdjustmentShape a sh:NodeShape;
+sh:targetClass :BusinessDayAdjustment ;
+sh:property :HasConvention;
+sh:property :HasBusinessCenter;
+
+:HasConvention sh:path :has_convention ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :Convention.
+
+:HasBusinessCenter sh:path :has_businesscenter ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :BusinessCenter.
+
+:EquityShape  a  sh:NodeShape;
+ sh:targetClass :Equity ;
+ sh:property [
+    sh:path     :equitytype ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string;
+] .
+
+:DebtShape  a  sh:NodeShape;
+ sh:targetClass :Debt ;
+ sh:property [
+    sh:path     :has_debttype ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:class :DebtType;
+] .
+
+:FundShape  a  sh:NodeShape;
+ sh:targetClass :Fund ;
+ sh:property [
+    sh:path     :fundtype ;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:datatype xsd:string;
+] .
+
+:DebtTypeShape a sh:NodeShape;
+sh:targetClass :DebtType ;
+sh:property :HasDebtClass;
+sh:property :HasDebtEconomics;
+
+:HasDebtClass sh:path :has_debtclass ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:class :DebtClass.
+
+:HasDebtEconomics sh:path :has_debteconomics ;
+sh:class :DebtEconomics.
+
+:DebtEconomicsShape a sh:NodeShape;
+sh:targetClass :DebtEconomics ;
+sh:property :HasSeniority;
+sh:property :HasDebtInterest;
+sh:property :HasDebtPrincipal;
+
+:HasSeniority sh:path :has_seniority ;
+    sh:maxCount 1;
+sh:class :Seniority.
+
+:HasDebtInterest sh:path :debtinterest ;
+    sh:minCount 1;
+    sh:maxCount 1;
+sh:datatype xsd:string.
+
+:HasDebtPrincipal sh:path :debtprincipal ;
+    sh:maxCount 1;
+sh:datatype xsd:string.
+
+:SecurityTypeDisjointShape a sh:NodeShape ;
+    sh:targetClass :SecurityType ;
+    sh:xone (
+        [
+            sh:property [
+                sh:path :has_type ;
+                sh:Class :Debt;
+            ]
+        ]
+ [
+            sh:property [
+                sh:path :has_type ;
+                sh:Class :Warrant;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path :has_type ;
+                sh:Class :Certificate;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path :has_type ;
+                sh:Class :Equity;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path :has_type ;
+                sh:Class :Fund;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path :has_type ;
+                sh:Class :LetterOfCredit;
+            ]
+        ]
+    ) .
+
+:SeniorityDisjointShape a sh:NodeShape ;
+    sh:targetClass :Seniority ;
+    sh:xone (
+        [
+            sh:property [
+                sh:path :has_senioritytype ;
+                sh:Class :Senior;
+            ]
+        ]
+ [
+            sh:property [
+                sh:path :has_senioritytype ;
+                sh:Class :Subordinated;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path :has_senioritytype ;
+                sh:Class :Severed;
+            ]
+        ]
+    ) .
